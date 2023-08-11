@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "yourssuRecruit"
-include ':mission1'
 include ':mission2'
+include ':mission1'
