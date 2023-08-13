@@ -1,48 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="이름"
-        android:textSize="25dp"
-        android:layout_gravity="center"/>
-
-    <EditText
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="홍길동"
-        android:inputType="textPassword"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="전화번호"
-        android:textSize="25dp"
-        android:layout_gravity="center"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="010-XXXX-XXXX"
-        android:inputType="textPassword"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:text="등록" />
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabs"
+        android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"/>
-
+        app:tabGravity="fill"
+        app:tabMode="fixed" />
 
 
 </LinearLayout>
