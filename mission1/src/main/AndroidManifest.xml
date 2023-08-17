@@ -8,13 +8,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YourssuRecruit">
         <activity
-            android:name=".checkPage"
+            android:name=".FragmentAdapter"
             android:exported="false" />
         <activity
-            android:name=".signPage"
+            android:name=".RegisterFragment"
             android:exported="false" />
         <activity
-            android:name=".Check"
+            android:name=".ViewContactsFragment"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

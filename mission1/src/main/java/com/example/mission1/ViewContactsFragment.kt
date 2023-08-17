@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 class ViewContactsFragment : Fragment() {
 
     private lateinit var listView: ListView
-    private val contacts = mutableListOf<String>() // Change the data type of 'contacts'
+    private val contacts = mutableListOf<String>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

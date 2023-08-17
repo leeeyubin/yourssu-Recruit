@@ -34,4 +34,3 @@ class MainActivity : AppCompatActivity(), RegisterFragment.OnContactAddedListene
         viewContactsFragment?.updateContactList(contact)
     }
 }
-
