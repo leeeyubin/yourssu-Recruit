@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "312546475",
+    "project_id": "yourssu-recruit",
+    "storage_bucket": "yourssu-recruit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312546475:android:fa0487a3b1eef9261013ee",
+        "android_client_info": {
+          "package_name": "com.example.mission1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312546475-jkfrvb85rioj181ue1pf4mbl8go47n8q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC19JA2Jj_KvtWrP93uS5FOzS41YM3Ersk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312546475-jkfrvb85rioj181ue1pf4mbl8go47n8q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

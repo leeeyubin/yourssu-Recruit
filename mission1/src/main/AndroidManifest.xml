@@ -8,15 +8,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YourssuRecruit">
         <activity
-            android:name=".FragmentAdapter"
-            android:exported="false" />
-        <activity
-            android:name=".RegisterFragment"
-            android:exported="false" />
-        <activity
-            android:name=".ViewContactsFragment"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

@@ -7,11 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
-import com.example.mission1.databinding.FragmentRegisterBinding
+import com.example.mission1.databinding.FragmentCheckBinding
 
-class HomeFragment : Fragment() {
+class TalkFragment : Fragment() {
 
-    private lateinit var binding : FragmentRegisterBinding
+    private lateinit var binding :FragmentCheckBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,9 +24,9 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_register, container, false )
-        binding.checkTap.setOnClickListener{
-            it.findNavController().navigate(R.id.action_registerFragment_to_checkFragment)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_check, container, false )
+        binding.registerTap.setOnClickListener{
+            it.findNavController().navigate(R.id.action_checkFragment_to_registerFragment)
         }
         return binding.root
     }
