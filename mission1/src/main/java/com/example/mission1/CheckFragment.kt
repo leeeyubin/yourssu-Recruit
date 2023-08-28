@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.mission1.databinding.FragmentCheckBinding
 
-class TalkFragment : Fragment() {
+class CheckFragment : Fragment() {
 
     private lateinit var binding :FragmentCheckBinding
 
