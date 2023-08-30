@@ -46,11 +46,12 @@ class RegisterFragment : Fragment(){
         auth = FirebaseAuth.getInstance()
 
         registerButton.setOnClickListener {
+            val name = nameEditText.text.toString()
+            val phoneNumber = phoneEditText.text.toString()
 
-            registerButton.setOnClickListener {
-                val name = nameEditText.text.toString()
-                val phoneNumber = phoneEditText.text.toString()
-
+            if (name.isEmpty() || phoneNumber.isEmpty()) {
+                Toast.makeText(requireContext(), "이름과 전화번호를 모두 입력하세요.", Toast.LENGTH_LONG).show()
+            } else {
                 val database = Firebase.database
                 val myRef = database.getReference("User")
 
@@ -64,10 +65,7 @@ class RegisterFragment : Fragment(){
                         Toast.makeText(requireContext(), "등록 실패: ${e.message}", Toast.LENGTH_LONG).show()
                     }
             }
-
-
         }
-
         return binding.root
     }
 
