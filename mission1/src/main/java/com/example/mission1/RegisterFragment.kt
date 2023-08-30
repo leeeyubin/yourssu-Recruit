@@ -10,12 +10,13 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.mission1.databinding.FragmentRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
-class RegisterFragment : Fragment() {
+class RegisterFragment : Fragment(){
 
     private lateinit var binding : FragmentRegisterBinding
     private lateinit var nameEditText : EditText
@@ -42,26 +43,32 @@ class RegisterFragment : Fragment() {
             it.findNavController().navigate(R.id.action_registerFragment_to_checkFragment)
         }
 
+        auth = FirebaseAuth.getInstance()
+
         registerButton.setOnClickListener {
-            var isGoToRegister = true
 
-            val name = nameEditText.text.toString()
-            val phone = phoneEditText.text.toString()
+            registerButton.setOnClickListener {
+                val name = nameEditText.text.toString()
+                val phoneNumber = phoneEditText.text.toString()
 
-            auth = Firebase.auth
+                val database = Firebase.database
+                val myRef = database.getReference("User")
 
-            if(name.isNotEmpty() && phone.isNotEmpty()){
-                Toast.makeText(context, "등록 성공", Toast.LENGTH_LONG).show()
-            } else{
-                Toast.makeText(context, "이름과 전화번호를 모두 입력해주세요", Toast.LENGTH_LONG).show()
-                isGoToRegister = false
+                val contact = Contact(name, phoneNumber)
+
+                myRef.push().setValue(contact)
+                    .addOnSuccessListener {
+                        Toast.makeText(requireContext(), "등록 성공", Toast.LENGTH_LONG).show()
+                    }
+                    .addOnFailureListener { e ->
+                        Toast.makeText(requireContext(), "등록 실패: ${e.message}", Toast.LENGTH_LONG).show()
+                    }
             }
 
-            if(isGoToRegister){
-                auth.createUserWithEmailAndPassword(name, phone)
-            }
+
         }
 
         return binding.root
     }
+
 }
